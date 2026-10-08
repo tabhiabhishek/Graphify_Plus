@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "graphify-plus": {
+      "command": "D:\\Projects\\venv311_new\\scripts\\python.exe",
+      "args": [
+        "-m",
+        "graphify_plus.mcp_entry",
+        "--db",
+        "C:\\Users\\sanjeevt/.graphify-plus/graph.db",
+        "--project-id",
+        "8"
+      ],
+      "env": {
+        "PYTHONPATH": "D:\\Projects\\graphify\\src"
+      }
+    }
+  }
+}
