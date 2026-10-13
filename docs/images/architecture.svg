@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="440" rx="14" fill="#0f141a"/>
+  <rect x="0.5" y="0.5" width="1279" height="439" rx="14" fill="none" stroke="#2a323d"/>
+  <text x="40" y="52" font-size="22" font-weight="700" fill="#f3f4f6">How Graphify Plus works</text>
+  <text x="40" y="78" font-size="14" fill="#9ca3af">Source code in → a queryable knowledge graph out, so the AI pulls ~200 tokens of context instead of reading whole files</text>
+
+  <!-- stage boxes -->
+  <g font-size="15">
+    <!-- 1 Ingest -->
+    <rect x="40" y="120" width="190" height="150" rx="12" fill="#161c24" stroke="#2a323d"/>
+    <rect x="40" y="120" width="190" height="6" rx="3" fill="#38bdf8"/>
+    <text x="135" y="158" text-anchor="middle" font-weight="700" fill="#f3f4f6">1 · Ingest</text>
+    <text x="135" y="190" text-anchor="middle" font-size="13" fill="#9ca3af">One or more projects</text>
+    <text x="135" y="212" text-anchor="middle" font-size="13" fill="#9ca3af">Folder exclude rules</text>
+    <text x="135" y="234" text-anchor="middle" font-size="13" fill="#9ca3af">File watcher (watchdog)</text>
+
+    <!-- 2 Extract -->
+    <rect x="280" y="120" width="190" height="150" rx="12" fill="#161c24" stroke="#2a323d"/>
+    <rect x="280" y="120" width="190" height="6" rx="3" fill="#a78bfa"/>
+    <text x="375" y="158" text-anchor="middle" font-weight="700" fill="#f3f4f6">2 · Extract</text>
+    <text x="375" y="190" text-anchor="middle" font-size="13" fill="#9ca3af">AST parsing</text>
+    <text x="375" y="212" text-anchor="middle" font-size="13" fill="#9ca3af">Modules · classes · functions</text>
+    <text x="375" y="234" text-anchor="middle" font-size="13" fill="#9ca3af">Imports · rationale notes</text>
+
+    <!-- 3 Graph -->
+    <rect x="520" y="120" width="190" height="150" rx="12" fill="#161c24" stroke="#166534"/>
+    <rect x="520" y="120" width="190" height="6" rx="3" fill="#22c55e"/>
+    <text x="615" y="158" text-anchor="middle" font-weight="700" fill="#f3f4f6">3 · Graph &amp; Cluster</text>
+    <text x="615" y="190" text-anchor="middle" font-size="13" fill="#9ca3af">NetworkX · igraph</text>
+    <text x="615" y="212" text-anchor="middle" font-size="13" fill="#9ca3af">Leiden communities</text>
+    <text x="615" y="234" text-anchor="middle" font-size="13" fill="#9ca3af">God-node detection</text>
+
+    <!-- 4 Store & Enrich -->
+    <rect x="760" y="120" width="210" height="150" rx="12" fill="#161c24" stroke="#2a323d"/>
+    <rect x="760" y="120" width="210" height="6" rx="3" fill="#f59e0b"/>
+    <text x="865" y="158" text-anchor="middle" font-weight="700" fill="#f3f4f6">4 · Store &amp; Enrich</text>
+    <text x="865" y="190" text-anchor="middle" font-size="13" fill="#9ca3af">SQLite graph.db + FTS5</text>
+    <text x="865" y="212" text-anchor="middle" font-size="13" fill="#9ca3af">Ollama semantic descriptions</text>
+    <text x="865" y="234" text-anchor="middle" font-size="13" fill="#9ca3af">Incremental rebuilds</text>
+
+    <!-- 5 Serve -->
+    <rect x="1020" y="120" width="220" height="150" rx="12" fill="#161c24" stroke="#2a323d"/>
+    <rect x="1020" y="120" width="220" height="6" rx="3" fill="#ec4899"/>
+    <text x="1130" y="158" text-anchor="middle" font-weight="700" fill="#f3f4f6">5 · Serve</text>
+    <text x="1130" y="190" text-anchor="middle" font-size="13" fill="#9ca3af">14 MCP tools for AI agents</text>
+    <text x="1130" y="212" text-anchor="middle" font-size="13" fill="#9ca3af">Web dashboard on :3000</text>
+    <text x="1130" y="234" text-anchor="middle" font-size="13" fill="#9ca3af">GRAPH_REPORT.md</text>
+  </g>
+
+  <g stroke="#4b5563" stroke-width="2" marker-end="url(#arr)">
+    <line x1="232" y1="195" x2="276" y2="195"/>
+    <line x1="472" y1="195" x2="516" y2="195"/>
+    <line x1="712" y1="195" x2="756" y2="195"/>
+    <line x1="972" y1="195" x2="1016" y2="195"/>
+  </g>
+
+  <!-- bottom layer -->
+  <rect x="40" y="310" width="1200" height="96" rx="12" fill="#121820" stroke="#2a323d" stroke-dasharray="6 6"/>
+  <text x="64" y="342" font-size="13" font-weight="700" fill="#9ca3af" letter-spacing="1">PLATFORM</text>
+  <g font-size="14" font-weight="600">
+    <rect x="64"  y="356" width="220" height="34" rx="8" fill="#1e2630"/><text x="174" y="378" text-anchor="middle" fill="#d1d5db">Python 3.11</text>
+    <rect x="300" y="356" width="220" height="34" rx="8" fill="#1e2630"/><text x="410" y="378" text-anchor="middle" fill="#d1d5db">MCP Python SDK</text>
+    <rect x="536" y="356" width="220" height="34" rx="8" fill="#1e2630"/><text x="646" y="378" text-anchor="middle" fill="#d1d5db">FastAPI + Uvicorn</text>
+    <rect x="772" y="356" width="220" height="34" rx="8" fill="#1e2630"/><text x="882" y="378" text-anchor="middle" fill="#d1d5db">leidenalg · python-igraph</text>
+    <rect x="1008" y="356" width="208" height="34" rx="8" fill="#1e2630"/><text x="1112" y="378" text-anchor="middle" fill="#d1d5db">Ollama (local, free)</text>
+  </g>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f141a"/>
+      <stop offset="1" stop-color="#14202e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="320" rx="18" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="1279" height="319" rx="18" fill="none" stroke="#2a323d"/>
+
+  <!-- knowledge-graph motif -->
+  <g stroke="#2f3b4a" stroke-width="2">
+    <line x1="150" y1="160" x2="92"  y2="104"/>
+    <line x1="150" y1="160" x2="84"  y2="196"/>
+    <line x1="150" y1="160" x2="140" y2="246"/>
+    <line x1="150" y1="160" x2="206" y2="96"/>
+    <line x1="150" y1="160" x2="224" y2="196"/>
+    <line x1="92"  y1="104" x2="140" y2="70"/>
+    <line x1="206" y1="96"  x2="140" y2="70"/>
+    <line x1="84"  y1="196" x2="140" y2="246"/>
+    <line x1="224" y1="196" x2="196" y2="250"/>
+  </g>
+  <g stroke="url(#accent)" stroke-width="3">
+    <line x1="150" y1="160" x2="224" y2="196"/>
+    <line x1="150" y1="160" x2="206" y2="96"/>
+  </g>
+  <circle cx="150" cy="160" r="20" fill="url(#accent)"/>
+  <circle cx="92"  cy="104" r="9"  fill="#a78bfa"/>
+  <circle cx="140" cy="70"  r="7"  fill="#a78bfa"/>
+  <circle cx="84"  cy="196" r="9"  fill="#f59e0b"/>
+  <circle cx="140" cy="246" r="8"  fill="#f59e0b"/>
+  <circle cx="206" cy="96"  r="10" fill="#38bdf8"/>
+  <circle cx="224" cy="196" r="10" fill="#22c55e"/>
+  <circle cx="196" cy="250" r="7"  fill="#22c55e"/>
+
+  <!-- arrow to MCP box -->
+  <path d="M252 160 h36" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M282 150 l12 10 l-12 10" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="310" y="128" width="64" height="64" rx="10" fill="#161c24" stroke="#2a323d"/>
+  <text x="342" y="168" text-anchor="middle" font-size="18" font-weight="700" fill="#e5e7eb">MCP</text>
+
+  <text x="420" y="150" font-size="60" font-weight="700" fill="#f3f4f6">Graphify <tspan fill="url(#accent)">Plus</tspan></text>
+  <text x="422" y="196" font-size="24" fill="#9ca3af">Turn any codebase into a knowledge graph your AI queries over MCP</text>
+
+  <g font-size="15" font-weight="600">
+    <rect x="422" y="226" width="140" height="32" rx="16" fill="#0f2a1c" stroke="#166534"/>
+    <text x="492" y="247" text-anchor="middle" fill="#4ade80">14 MCP Tools</text>
+    <rect x="574" y="226" width="168" height="32" rx="16" fill="#0c2233" stroke="#075985"/>
+    <text x="658" y="247" text-anchor="middle" fill="#7dd3fc">NetworkX · Leiden</text>
+    <rect x="754" y="226" width="130" height="32" rx="16" fill="#2a1f0b" stroke="#92400e"/>
+    <text x="819" y="247" text-anchor="middle" fill="#fbbf24">SQLite FTS5</text>
+    <rect x="896" y="226" width="100" height="32" rx="16" fill="#241433" stroke="#6b21a8"/>
+    <text x="946" y="247" text-anchor="middle" fill="#d8b4fe">Ollama</text>
+    <rect x="1008" y="226" width="146" height="32" rx="16" fill="#1e2630" stroke="#2a323d"/>
+    <text x="1081" y="247" text-anchor="middle" fill="#d1d5db">Python · FastAPI</text>
+  </g>
+</svg>
