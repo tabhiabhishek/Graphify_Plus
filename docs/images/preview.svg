@@ -70,7 +70,7 @@
     <text x="44" y="282">Path</text><text x="160" y="282" fill="#e5e7eb" font-family="Consolas, Menlo, monospace">D:\Projects\media-player-app</text>
     <text x="44" y="306">Excluded</text><text x="160" y="306" fill="#e5e7eb">venv/ · node_modules/ · build/</text>
     <text x="44" y="330">Last build</text><text x="160" y="330" fill="#e5e7eb">2 min ago · incremental (3 files)</text>
-    <text x="44" y="354">MCP plugin</text><text x="160" y="354" fill="#e5e7eb">.mcp.json → Claude Code</text>
+    <text x="44" y="354">MCP plugin</text><text x="160" y="354" fill="#e5e7eb">.mcp.json → AI assistant</text>
   </g>
   <g font-size="13" font-weight="600">
     <rect x="44" y="374" width="104" height="34" rx="8" fill="#1e2630" stroke="#2a323d"/><text x="96" y="396" text-anchor="middle" fill="#d1d5db">Rebuild</text>
@@ -81,7 +81,7 @@
   <!-- MCP activity terminal -->
   <rect x="24" y="442" width="496" height="254" rx="12" fill="#161c24" stroke="#2a323d"/>
   <text x="44" y="472" font-size="15" font-weight="700" fill="#f3f4f6">MCP Activity</text>
-  <text x="500" y="472" text-anchor="end" font-size="12" fill="#6b7280">Claude Code · stdio</text>
+  <text x="500" y="472" text-anchor="end" font-size="12" fill="#6b7280">MCP client · stdio</text>
   <rect x="44" y="486" width="456" height="190" rx="8" fill="#0b0f14" stroke="#2a323d"/>
   <g font-family="Consolas, Menlo, monospace" font-size="13">
     <text x="60" y="512" fill="#9ca3af">&gt; How does playback buffering work?</text>
