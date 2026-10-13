@@ -1,0 +1,11 @@
+# Python
+venv*/
+__pycache__/
+*.pyc
+
+# Local machine config (contains absolute paths)
+.mcp.json
+.mcp.json.bak
+
+# Private documents
+*.pdf

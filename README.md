@@ -45,18 +45,104 @@ Traditional AI coding tools dump entire files into the prompt, wasting thousands
 
 ## 🚀 Getting Started
 
-*(Note: Update these instructions based on your actual tech stack - e.g., Node.js, Python, etc.)*
-
 ### Prerequisites
-- Node.js / Python (depending on your setup)
+- Python 3.11
 - An MCP-compatible AI client (like Claude Desktop, Cursor, or a custom Codex setup)
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/Graphify-Plus.git
-cd Graphify-Plus
+git clone https://github.com/tabhiabhishek/Graphify_Plus.git
+cd Graphify_Plus
+
+# Create a virtual environment (Python 3.11)
+python -m venv venv
+venv\Scripts\activate        # Windows
+# source venv/bin/activate    # macOS / Linux
 
 # Install dependencies
-npm install  # or pip install -r requirements.txt
+pip install -r requirements.txt
+```
+
+### Run the server
+
+**PowerShell**
+```powershell
+$env:PYTHONPATH = "src"
+python -m graphify_plus.server
+```
+
+**CMD**
+```bat
+set PYTHONPATH=src
+python -m graphify_plus.server
+```
+
+Then open **http://localhost:3000** to use the dashboard.
+
+> In PowerShell use `$env:PYTHONPATH = "src"`. In CMD use `set PYTHONPATH=src`. Mixing them up is the most common startup error.
+
+### Free semantic enrichment with Ollama (optional)
+1. Install [Ollama](https://ollama.com/download).
+2. Pull a model:
+   ```bash
+   ollama pull phi3
+   ```
+3. In the dashboard, click **Enrich with AI** on your project card, pick the model and start enrichment.
+
+| Model | Size | Best for |
+|---|---|---|
+| `qwen2:1.5b` | 1.0 GB | Very fast, works on weak machines |
+| `phi3` | 2.3 GB | Fast, CPU is fine |
+| `codellama` | 3.8 GB | Code-optimized |
+| `llama3.1` | 4.7 GB | Best quality (needs a GPU) |
+
+### Connect your AI assistant (MCP)
+1. In the dashboard, click **Install Plugin** on your project card and choose **Claude Code** or **VS Code Cline**.
+2. This writes a `.mcp.json` file into your project folder.
+3. Start your assistant in that folder and ask: *"What MCP tools do you have?"* You should see the graph tools listed.
+
+**Token-saving workflow:** ask in this order:
+1. `community_summaries` to understand the codebase structure (~300 tokens)
+2. `search_graph("topic", compact=true)` to find relevant nodes (~200 tokens)
+3. `get_file_summary("file.py")` to decide whether you need the source (~80 tokens)
+4. Read the actual file only when you need exact code
+
+### MCP tools
+
+| Tool | What it does | Tokens |
+|---|---|---|
+| `list_projects` | List all indexed projects | ~50 |
+| `graph_stats` | Node / edge / community counts | ~30 |
+| `search_graph` | Find nodes by meaning (FTS5 + semantic) | 50–200 |
+| `get_god_nodes` | Most connected hub nodes | 100–200 |
+| `get_neighbors` | Connections around a node | 100–500 |
+| `shortest_path` | How two concepts connect | 200–500 |
+| `nodes_in_file` | All nodes from a file | 50–500 |
+| `get_community` | All nodes in a cluster | 100–1000 |
+| `community_summaries` | Table of contents for the codebase | 100–500 |
+| `get_file_summary` | Describe a file without reading its source | 50–100 |
+| `diff_impact` | How git changes affect the graph | 100–500 |
+| `rebuild_graph` | Rebuild after code changes | 0 |
+| `semantic_enrich` | Run Ollama enrichment | 0 |
+
+### Token savings
+
+| Approach | Tokens per query | Savings |
+|---|---|---|
+| No graph (AI reads files) | ~50,000 | baseline |
+| `GRAPH_REPORT.md` only | ~2,000 | 96% |
+| MCP tools (before enrichment) | ~500 | 99% |
+| MCP tools (after enrichment) | ~200 | 99.6% |
+
+### Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| `ModuleNotFoundError: No module named 'graphify_plus'` | Set `PYTHONPATH` to `src` (see above) |
+| Path with spaces "is not recognized" | Run `python -m graphify_plus.server` instead of the `.py` file directly |
+| Ollama times out | Use a smaller model such as `phi3` or `qwen2:1.5b` |
+| Ollama can't reach the registry behind a corporate proxy | Set `HTTPS_PROXY` / `HTTP_PROXY` to your proxy before `ollama pull` |
+| MCP tools not showing | Click **Install Plugin** again in the dashboard to regenerate `.mcp.json` |
+| Fresh start | Delete `~/.graphify-plus/graph.db` |
